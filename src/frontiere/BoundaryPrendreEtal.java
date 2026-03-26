@@ -13,6 +13,7 @@ public class BoundaryPrendreEtal {
 		boolean nomVendeurConnu = controlPrendreEtal.verifierIdentite(nomVendeur);
 		StringBuilder texte = new StringBuilder();
 		if(!nomVendeurConnu) {
+			System.out.println(nomVendeur);
 			texte.append("Je suis désolé " + nomVendeur + " mais il faut être un habitant du village pour commercer ici.\n");
 			System.out.println(texte.toString());
 		
@@ -37,5 +38,27 @@ public class BoundaryPrendreEtal {
 				+ "Il me faudrait quelques renseignements : \n"
 				+ "Quel produit souhaitez vous vendre ?");
 		String produit = Clavier.entrerChaine(texte.toString());
+		
+		int nb = Clavier.entrerEntier("Combien souhaitez-vous en vendre ?");
+		int numeroEtal = controlPrendreEtal.prendreEtal(nomVendeur, produit, nb);
+		
+		if(numeroEtal != -1) {
+			System.out.println(String.format("Le vendeur %s s'est installé(e) à l'étal n°%d", nomVendeur, numeroEtal));
+		}
+		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
