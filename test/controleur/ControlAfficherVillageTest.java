@@ -46,12 +46,12 @@ class ControlAfficherVillageTest {
 
 	@Test
 	void testDonnerNomVillage() {
-		fail("Not yet implemented");
+		assertEquals("La Gaule antique", controleur.donnerNomVillage());
 	}
 
 	@Test
 	void testDonnerNbEtals() {
-		fail("Not yet implemented");
+		assertEquals(1, controleur.donnerNbEtals());
 	}
 
 }
